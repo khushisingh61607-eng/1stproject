@@ -1,7 +1,7 @@
 *{
     margin: 0;
     font-family: arial;
-    border: border-box ; /* border-box use krte hai jisse boder anadr hi rhe element k jitna use height or width di ho other border bhr add hota hai, border-box krne se size issue nhi hota */
+    box-sizing: border-box ; /* border-box use krte hai jisse boder anadr hi rhe element k jitna use height or width di ho other border bhr add hota hai, border-box krne se size issue nhi hota */
 }
 /* navbar */
 .navbar{
@@ -50,6 +50,7 @@
 .nav-search{
     display: flex;
     justify-content: space-evenly;
+    width: 100%
     width: 620px;
     height: 40px;
 }
@@ -144,12 +145,13 @@
 .box{
     border: 2px solid black;
     height: 400px;
-    width: 23%;
+    max-width: 23%;
     background-color: white;
     margin-top: 15px;
 }
 .box-img{
-    height: 350px;
+    height: auto;
+    width: 100%
     background-image: url(health-img.jpg);
     background-size: cover;
     margin: 0px 20px;
@@ -158,21 +160,24 @@ h2{margin-left: 20px;}
 p{ margin-left: 20px;}
 
 .box2-img{
-    height: 322px;
+    height: auto;
+    width: 100%
     background-image: url(kitchen-img.jpg);
     background-size: cover;
     margin: 0px 20px;
 }
 .box3-img{
-    height: 350px;
+    height: auto;
+    width: 100%
     background-image: url(clothes-img.jpg);
     background-size: cover;
     margin: 0px 20px;
 }
 .box4-img{
     background-image: url(beauty-im4g.jpg);
-    background-size: cover;
-    height: 350px;
+    background-size: contain;
+    height: auto;
+    width: 100%
     margin: 0px 20px;
 }
 .box5g{
@@ -355,4 +360,44 @@ ul{
 }
 .copyright{
     padding-top: 5px;
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .nav-search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .panel-ops {
+        display: none;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .bboxg {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .box5g,
+    .box6g,
+    .box7g {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .foot-panel2 {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo2 {
+        width: 40%;
+    }
 }
